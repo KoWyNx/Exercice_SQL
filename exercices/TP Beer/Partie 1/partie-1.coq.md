@@ -63,7 +63,6 @@ select NUMERO_TICKET from ticket where MONTH(DATE_VENTE) = 3 and year(DATE_VENTE
 ```mysql
 SELECT NUMERO_TICKET FROM ticket
 WHERE MONTH(DATE_VENTE) IN (3, 4) AND YEAR(DATE_VENTE) = 2014;
-
 ```
 
 ### Quelles sont les tickets émis au mois de mars et juin 2014 ?
