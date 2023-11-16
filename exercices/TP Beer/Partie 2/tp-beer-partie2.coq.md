@@ -54,15 +54,19 @@ WHERE p.NOM_CONTINENT = 'Afrique';
 ```mysql
 SELECT b.ID_ARTICLE, b.NOM_ARTICLE, p.NOM_PAYS, c.NOM_CONTINENT
 FROM article b
-         join marque m on b.ID_MARQUE = m.ID_MARQUE
-         JOIN pays p ON m.ID_PAYS = p.ID_PAYS
-         JOIN continent c ON p.ID_CONTINENT = c.ID_CONTINENT
+join marque m on b.ID_MARQUE = m.ID_MARQUE
+JOIN pays p ON m.ID_PAYS = p.ID_PAYS
+JOIN continent c ON p.ID_CONTINENT = c.ID_CONTINENT
 WHERE c.NOM_CONTINENT = 'Afrique';
 ```
 
 ## 16. Lister les tickets (année, numéro de ticket, montant total payé). En sachant que le prix de vente est égal au prix d’achat augmenté de 15%.
 
 ```mysql
+SELECT YEAR(DATE_VENTE) AS ANNEE, NUMERO_TICKET, SUM(round(PRIX_ACHAT * 1.15, 2)) AS MontantTotalPaye
+FROM ticket
+JOIN article ON ticket.NUMERO_TICKET = article.ID_ARTICLE
+GROUP BY YEAR(DATE_VENTE), NUMERO_TICKET;
 
 ```
 
