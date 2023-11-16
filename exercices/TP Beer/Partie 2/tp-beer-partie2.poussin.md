@@ -13,6 +13,7 @@
 ## 11 Listez chaque ticket pour lequel la quantité totale d’articles vendus est supérieure à 500. (Classer par quantité décroissante)
 
 ```mysql
+
 ```
 
 - Vous devrez partir de la table `Ventes`
